@@ -1,1 +1,1 @@
-Estructura principal del proyecto
+Estructura principal del proyecto. Línea 2: Contenido de la rama master.
