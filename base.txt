@@ -1,1 +1,3 @@
-Estructura principal del proyecto. Línea 2: Contenido de la rama master.
+Estructura principal del proyecto. Línea 2: Contenido de la rama master
+Línea 1: Contenido de la rama de login.
+
