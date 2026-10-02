@@ -1,7 +1,7 @@
 # Desarrollo de Interfaces - 2º DAM
 
 ## 👤 Datos del Alumno
-* **Nombre y Apellidos:** David Rodríguez
+* **Nombre y Apellidos:** David Rodríguez Pozo
 * **Repositorio:** Unidad 1 - Introducción a Git, GitHub y Gestión de Incidencias
 
 ---
@@ -22,3 +22,6 @@ Este repositorio está organizado en carpetas independientes para cada práctica
 * **Descripción:** Flujo de trabajo integrado con GitHub. Creación, asignación y categorización de incidencias mediante *labels* personalizados, y automatización del ciclo de vida de los *Issues* (cierre automático y manual) vinculados directamente a los mensajes de los *commits*.
 * **Estado:** 🏁 Finalizada.
 
+### 📂 4. Tarea 1.7 (Práctica 7): Cambio de Remoto entre Repositorios
+* **Descripción:** Simulacro de examen práctico. Clonado de repositorios, modificación de URLs remotas mediante `git remote set-url`, integración de historiales sin ancestro común (`allow-unrelated-histories`) y resolución de bloqueos en la subida (*push rechazado*) al repositorio de entrega.
+* **Estado:** 🏁 Finalizada.
