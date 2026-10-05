@@ -17,7 +17,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-on-version: '20'
+          node-version: '20'
 
       - name: Instalar dependencias
         run: npm install
@@ -28,11 +28,9 @@ jobs:
   # Segundo job independiente: corre en paralelo a 'test'
   lint:
     runs-on: ubuntu-latest
-        run: node --version
     steps:
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Simular linter comprobando versión de Node
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
 
+      - name: Comprobar versión de Node
+        run: node --version
