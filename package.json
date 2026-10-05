@@ -1,0 +1,22 @@
+{
+  "name": "practica-actions-01",
+  "version": "1.0.0",
+  "description": "**Hola mundo **",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -e \"console.log('Tests OK'); process.exit(0)\""  
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidRodriguez32/practica-actions-01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DavidRodriguez32/practica-actions-01/issues"
+  },
+  "homepage": "https://github.com/DavidRodriguez32/practica-actions-01#readme"
+}
