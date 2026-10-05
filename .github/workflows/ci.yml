@@ -1,17 +1,38 @@
-name: CI
+name: Práctica GitHub Actions
+
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ "main" ]
+
 jobs:
+  # Primer job: ejecuta los tests
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-on-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+  # Segundo job independiente: corre en paralelo a 'test'
+  lint:
+    runs-on: ubuntu-latest
+        run: node --version
+    steps:
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
-      - run: npm test
+      - name: Simular linter comprobando versión de Node
+
