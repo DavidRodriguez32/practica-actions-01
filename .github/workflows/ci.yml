@@ -6,10 +6,12 @@ on:
     branches: [main]
   workflow_dispatch:
 jobs:
-  saludo:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el código
-        uses: actions/checkout@v4
-      - name: Saludar
-        run: echo "Hola desde GitHub Actions"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm test
