@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Desarrollo de Interfaces - 2º DAM
 
 ## 👤 Datos del Alumno
@@ -25,3 +26,8 @@ Este repositorio está organizado en carpetas independientes para cada práctica
 ### 📂 4. Tarea 1.7 (Práctica 7): Cambio de Remoto entre Repositorios
 * **Descripción:** Simulacro de examen práctico. Clonado de repositorios, modificación de URLs remotas mediante `git remote set-url`, integración de historiales sin ancestro común (`allow-unrelated-histories`) y resolución de bloqueos en la subida (*push rechazado*) al repositorio de entrega.
 * **Estado:** 🏁 Finalizada.
+=======
+# practica-actions-01
+
+**Hola mundo **
+>>>>>>> 524ac5a06ec2878c646d24dba51bbde4acbf6f8d
