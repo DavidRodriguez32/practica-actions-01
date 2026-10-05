@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node -e \"console.log('Tests OK'); process.exit(0)\""
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DavidRodriguez32/practica-actions-01.git"
