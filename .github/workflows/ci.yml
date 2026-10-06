@@ -1,48 +1,42 @@
-name: Práctica GitHub Actions
+name: CI Workflow
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+on: push
 
 jobs:
-  # Ejecuta los tests en múltiples versiones de Node.js en paralelo
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Ejecutando linter..."
+
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18, 20, 22]
     steps:
-      - name: Descargar código del repositorio
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm test
 
-      - name: Instalar dependencias
-        run: npm install
+      - name: Usar secreto sin exponerlo
+        env:
+          MI_SECRETO: ${{ secrets.SALUDO_SECRETO }}
+        run: echo "El secreto tiene $(echo -n "$MI_SECRETO" | wc -c) caracteres"
 
-      - name: Ejecutar pruebas
-        run: npm test
+      - name: Avisar de fallo
+        if: failure()
+        run: echo "Algún step anterior ha fallado"
 
-  # Job independiente para comprobar la versión (corre en paralelo)
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Descargar código del repositorio
-        uses: actions/checkout@v4
+      - name: Limpieza final
+        if: always()
+        run: echo "Esto se ejecuta pase lo que pase"
 
-      - name: Comprobar versión de Node
-        run: node --version
-
-  # Este es el nuevo job que se ejecuta solo si estás en la rama main
   solo-en-main:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Mostrar mensaje en main
-        run: echo "Esto solo se ve en main"
+      - run: echo "Esto solo se ve en main"
