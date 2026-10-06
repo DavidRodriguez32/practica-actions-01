@@ -7,10 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  saludo:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
     steps:
-      - name: Descargar el código
-        uses: actions/checkout@v4
-      - name: Saludar
-        run: echo "Hola desde GitHub Actions"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm test
