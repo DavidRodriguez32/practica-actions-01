@@ -38,3 +38,11 @@ jobs:
 
       - name: Comprobar versión de Node
         run: node --version
+
+  # Este es el nuevo job que se ejecuta solo si estás en la rama main
+  solo-en-main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje en main
+        run: echo "Esto solo se ve en main"
